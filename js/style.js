@@ -8,8 +8,21 @@ request.onload = function()
     var response = request.response;
     var jsonData = JSON.parse(response);
     console.log(jsonData);
-    var descripcion = jsonData[0].description; 
-    console.log(descripcion);
+     
+
+    for(item in jsonData)
+    {
+        var name = jsonData[item].name;
+        var image = jsonData[item].image;
+        var products = document.createElement('li');
+        var images = document.createElement('img');
+        products.innerHTML = name;
+        images.setAttribute('src',image); 
+        
+        document.body.appendChild(products);
+        document.body.appendChild(images);
+        
+    }
 
 }
 
