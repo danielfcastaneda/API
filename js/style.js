@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 
-request.open('GET','https://hplussport.com/api/products');
+request.open('GET','https://hplussport.com/api/products?qty=3&order=name');
 
 
 request.onload = function()
@@ -12,3 +12,5 @@ request.onload = function()
     console.log(jsonData);
     console.log(typeof jsonData); 
 }
+
+request.send();
